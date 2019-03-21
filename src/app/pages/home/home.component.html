@@ -1,4 +1,27 @@
 
 <fieldset>
-  <legend>Hello Mr O'Connor</legend>
+  <legend>Hello Mr O'Connor</legend><br>
+  
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Opportunity nº</th>
+        <th scope="col">VRM</th>
+        <th scope="col">Make</th>
+        <th scope="col">Model</th>
+        <th scope="col">Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let car of cars">
+        <th scope="row">{{car.id}}</th>
+        <td>{{car.vrm}}</td>
+        <td>{{car.make}}</td>
+        <td>{{car.model}}</td>
+        <td><span [class.red]="!car.status" [class.green]="car.status" class="dot"></span></td>
+        <td><a href="supplier-mgt/{{car.vrm}}" role="button" class="btn btn-primary">View</a></td>
+      </tr>
+    </tbody>
+  </table>
 </fieldset>
