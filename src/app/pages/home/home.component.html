@@ -2,10 +2,10 @@
 <fieldset>
   <legend>Hello Mr O'Connor</legend><br>
   
-  <table class="table">
+  <table class="table table-striped">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Opportunity nº</th>
+        <th scope="col">Order nº</th>
         <th scope="col">VRM</th>
         <th scope="col">Make</th>
         <th scope="col">Model</th>
@@ -20,7 +20,7 @@
         <td>{{car.make}}</td>
         <td>{{car.model}}</td>
         <td><span [class.red]="!car.status" [class.green]="car.status" class="dot"></span></td>
-        <td><a href="supplier-mgt/{{car.vrm}}" role="button" class="btn btn-primary">View</a></td>
+        <td><a href="supplier-mgt/{{car.vrm}}" role="button" class="btn btn-info">View</a></td>
       </tr>
     </tbody>
   </table>
