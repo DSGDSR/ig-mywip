@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  public typeAnswer = 0;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  changeTypeAnswer(selected) {
+    this.typeAnswer = selected;
+  }
 }
