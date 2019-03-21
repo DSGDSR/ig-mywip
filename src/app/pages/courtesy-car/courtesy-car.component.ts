@@ -13,7 +13,7 @@ export class CourtesyCarComponent implements OnInit {
   ngOnInit() {
   }
 
-  changeSelectCaegory(selected){
+  changeSelectCaegory(selected) {
     this.categoryLevel = selected;
   }
 }
