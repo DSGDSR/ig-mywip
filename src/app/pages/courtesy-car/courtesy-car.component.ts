@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./courtesy-car.component.css']
 })
 export class CourtesyCarComponent implements OnInit {
+  public categoryLevel = 0;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  changeSelectCaegory(selected){
+    this.categoryLevel = selected;
+  }
 }
