@@ -19,8 +19,8 @@
         <td>{{car.vrm}}</td>
         <td>{{car.make}}</td>
         <td>{{car.model}}</td>
-        <td><span [class.red]="!car.status" [class.green]="car.status" class="dot"></span></td>
-        <td><a href="supplier-mgt/{{car.vrm}}" role="button" class="btn btn-primary">View</a></td>
+        <td><span [class.yellow]="!car.status" [class.green]="car.status" class="dot"></span></td>
+        <td><a href="supplier-mgt/{{car.id}}" role="button" class="btn btn-primary">View</a></td>
       </tr>
     </tbody>
   </table>

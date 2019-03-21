@@ -6,10 +6,10 @@
     display: inline-block;
 }
 
-.red {
-    background-color: red !important;
+.yellow {
+    background-color: #ffc107 !important;
 }
 
 .green {
-    background-color: greenyellow !important;
+    background-color: #28a745 !important;
 }
