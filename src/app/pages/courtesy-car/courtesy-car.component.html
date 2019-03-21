@@ -26,19 +26,32 @@
             <th scope="col">Make</th>
             <th scope="col">Model</th>
             <th scope="col">Year</th>
-            <th scope="col">Nº door</th>
-            <th scope="col">Colour</th>
+            <th scope="col">Company</th>
+            <th scope="col">Motor</th>
           </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let car of carAvilable">
+            <tr *ngFor="let car of carAvilable" (click)="selectCarAction(car)">
                 <td>{{car.make}}</td>
                 <td>{{car.model}}</td>
                 <td>{{car.year}}</td>
-                <td>{{car.numDoor}}</td>
-                <td>{{car.colour}}</td>
+                <td>{{car.company}}</td>
+                <td>{{car.motor}}</td>
               </tr>
         </tbody>
     </table>     
+  </div>
+
+  <div class="container col-sm-10" *ngIf="selectCar">     
+    <div class="container col-sm-7">
+      <h3>{{selectCar.make}} - {{selectCar.model}}</h3>
+      <h6>{{selectCar.year}}  {{selectCar.colour}}</h6>
+      <h5>{{selectCar.company}}</h5>
+    </div>    
+    <div class="container col-sm-3">
+        <img src="{{selectCar.path}}" alt="" class="img-fluid" alt="Responsive image">
+
+    </div>
+
   </div>
 </fieldset>

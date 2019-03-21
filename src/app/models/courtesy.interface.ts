@@ -3,5 +3,8 @@ export interface Courtesy {
     model: String,
     year: String,
     numDoor: String,
-    colour: String
+    colour: String,
+    company: String,
+    motor: String,
+    path: String
 }
