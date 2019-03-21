@@ -12,4 +12,11 @@ export class PickupComponent implements OnInit {
   ngOnInit() {
   }
 
+  courtesyCardSend() {
+    alert('hola');
+  }
+
+  changeDate() {
+    alert('hola');
+  }
 }
