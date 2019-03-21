@@ -1,54 +1,87 @@
-<div class="card">
-  <div class="card-header">
-    Total Progress of your car
+
+
+<div class="row">
+  <div class="col-md-5">
+
+      <div class="card">
+          <div class="card-header">
+            Total Progress of your car: {{car.make + ' ' + car.model}}
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" [class.bg-warning]="car_proggress<100" [class.bg-success]="car_proggress==100" role="progressbar" [style.width.%]="car_proggress" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Trunk</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                      <span *ngIf="car.proggress.trunk==0">Pending</span>
+                      <span *ngIf="car.proggress.trunk>0 && car.proggress.trunk<100">In progress</span>
+                      <span *ngIf="car.proggress.trunk==100">Completed</span></h6>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" [class.bg-warning]="car.proggress.trunk<100" [class.bg-success]="car.proggress.trunk==100" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" [style.width.%]="car.proggress.trunk"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Back Window</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                      <span *ngIf="car.proggress.backw==0">Pending</span>
+                      <span *ngIf="car.proggress.backw>0 && car.proggress.backw<100">In progress</span>
+                      <span *ngIf="car.proggress.backw==100">Completed</span></h6>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" [class.bg-warning]="car.proggress.backw<100" [class.bg-success]="car.proggress.backw==100" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" [style.width.%]="car.proggress.backw"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Tail Light Right</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                      <span *ngIf="car.proggress.tail==0">Pending</span>
+                      <span *ngIf="car.proggress.tail>0 && car.proggress.tail<100">In progress</span>
+                      <span *ngIf="car.proggress.tail==100">Completed</span></h6>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" [class.bg-warning]="car.proggress.tail<100" [class.bg-success]="car.proggress.tail==100" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" [style.width.%]="car.proggress.tail"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Step Bumper</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                    <span *ngIf="car.proggress.step==0">Pending</span>
+                    <span *ngIf="car.proggress.step>0 && car.proggress.step<100">In progress</span>
+                    <span *ngIf="car.proggress.step==100">Completed</span>
+                  </h6>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" [class.bg-warning]="car.proggress.step<100" [class.bg-success]="car.proggress.step==100" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" [style.width.%]="car.proggress.step"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+      </div>
   </div>
-  <div class="progress">
-    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      <div class="card">
+
+    <div class="col-md-7 pl-md-5">
+    <div class="card">
+        <h5 class="card-header">Opportunity info</h5>
         <div class="card-body">
-          <h5 class="card-title">Trunk</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Completed</h6>
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
-          </div>
+          <p class="card-text"><b>VRM: </b>{{car.vrm}}</p>
+          <p class="card-text"><b>Make: </b>{{car.make}}</p>
+          <p class="card-text"><b>Model: </b>{{car.model}}</p>
+          <p class="card-text"><b>Pickup date: </b>{{ (car.pickupDate | date ) || "not set"}}</p>
+          <p class="card-text"><b>Incident date: </b>{{ (car.incidentDate | date ) || "not set"}}</p>
         </div>
       </div>
-    </li>
-    <li class="list-group-item">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Back Window</h5>
-          <h6 class="card-subtitle mb-2 text-muted">In Progress</h6>
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="list-group-item">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Tail Light Right</h5>
-          <h6 class="card-subtitle mb-2 text-muted">In Progress</h6>
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li class="list-group-item">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Step Bumper</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Pending</h6>
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
-          </div>
-        </div>
-      </div>
-    </li>
-  </ul>
+    </div>
 </div>
