@@ -55,7 +55,7 @@ export var cars = [
       make: 'BMW',
       model: 'X2',
       vrm: '3487TTF',
-      pickupDate: new Date('27-03-2019'),
+      pickupDate: new Date('05-03-2019'),
       incidentDate: new Date('11-17-2018')
     }, {
       id: '34534a',
