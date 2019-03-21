@@ -1,3 +1,42 @@
-<p>
-  pickup works!
-</p>
+<div class="container">
+  <fieldset>
+    <legend>Pick up</legend>
+    <div class="card" class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Taller Mecánico Agustín Duran</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Calle los Molinos, 15, 14740 Hornachuelos, Córdoba</h6>
+        <p class="card-text">Contact: 666 555 444 / <a href="mailto:agustinduran@gmail.com">agustinduran@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="card" class="card mb-3">
+      <div class="card-body">
+        <p class="card-text">You can pick up your car on 07/21/2019 at 18:00.</p>
+        <button type="button" (click)="changeDate()" class="btn btn-info btn-sm">Change date</button>
+      </div>
+    </div>
+    <div class="card" class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Do you need us to pick you up?</h5>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="options" id="none" value="none" checked>
+            <label class="form-check-label" for="none">
+              No thanks
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="options" id="taxi" value="taxi">
+            <label class="form-check-label" for="taxi">
+              By taxi
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="options" id="car" value="car">
+            <label class="form-check-label" for="car">
+              By courtesy car
+            </label>
+          </div>
+          <button type="button" (click)="courtesyCardSend()" class="btn btn-info btn-sm">Send</button>
+      </div>
+    </div>
+  </fieldset>
+</div>
