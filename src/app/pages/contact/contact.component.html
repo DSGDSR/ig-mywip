@@ -1,3 +1,26 @@
-<p>
-  contact works!
-</p>
+<div class="container">
+  <fieldset>
+    <legend>Contact form</legend>
+    
+    <p>
+    <textarea name="idContactDetails" id="" cols="30" rows="10"></textarea>
+    </p>
+    <p>
+      <label for="select">Answer by:  </label>
+      <select id="select">
+        <option value="">Choose ...</option>
+          <option value="Telephone">Telephone</option>
+          <option value="Email">Email</option>
+          <option value="SMS">SMS</option>
+      </select>
+    </p>
+    <p>
+        <label for="date">Date to contact</label>
+        <input type="date" id="date">
+      </p>
+      <p>
+          <button type="submit" class="btn btn-success">Accept</button>
+          <button type="submit" class="btn btn-danger">Cancel</button>
+        </p>
+  </fieldset>
+</div>
